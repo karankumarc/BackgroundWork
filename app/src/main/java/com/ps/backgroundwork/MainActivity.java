@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
         LogHelper.logThreadId("btnDoLongRunningWorkOnClick");
         String messageText = "This is the message from the Activity.";
 
-        Intent intent = new Intent(this,MySimpleService.class);
+        Intent intent = new Intent(MainActivity.this,MySimpleService.class);
         intent.putExtra("MessageText", messageText);
         startService(intent);
 
