@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
 
     private void btnDoLongRunningWorkOnClick(Button button) {
         LogHelper.logThreadId("btnDoLongRunningWorkOnClick");
-        String messageText = "This is the message from the Activity";
+        String messageText = "This is the message from the Activity.";
 
         FileOutputStream outStream = FileHelper.openOutStream(this, "servicedata.txt");
         for (int i = 0; i < 5; i++) {
