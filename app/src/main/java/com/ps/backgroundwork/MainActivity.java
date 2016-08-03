@@ -1,5 +1,6 @@
 package com.ps.backgroundwork;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -51,11 +52,9 @@ public class MainActivity extends Activity {
         LogHelper.logThreadId("btnDoLongRunningWorkOnClick");
         String messageText = "This is the message from the Activity.";
 
-        FileOutputStream outStream = FileHelper.openOutStream(this, "servicedata.txt");
-        for (int i = 0; i < 5; i++) {
-            FileHelper.slowWrite(outStream, messageText);
-        }
-        FileHelper.closeOutStream(outStream);
+        Intent intent = new Intent(this,MySimpleService.class);
+        intent.putExtra("MessageText", messageText);
+        startService(intent);
 
     }
 
